@@ -7,7 +7,11 @@
         :toggle="toggle"
         @show="getToolInfo"
       />
-      <editor-menu :isActive="isActive" :tool="tool"/>
+      <editor-menu
+        :isActive="isActive"
+        :tool="tool"
+        @delete="handleDelete"
+      />
     </main>
   </div>
 </template>
@@ -51,7 +55,10 @@ export default {
     },
     getToolInfo (tool) {
       this.tool = tool
-      console.log(this.tool)
+    },
+    handleDelete (item) {
+      this.tools = this.tools.filter(tool => tool.id !== item.id)
+      this.toggle()
     }
   }
 }
@@ -65,10 +72,9 @@ body {
 }
 
 .app {
-  max-width: 998px;
+  max-width: 797px;
   padding: 5px;
   margin: 0 auto;
-
   &__content {
     display: flex;
     justify-content: center;
