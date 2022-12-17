@@ -3,9 +3,9 @@
     <main class="app__content">
       <side-bar/>
       <table-tools
-        :tools="tools"
         :toggle="toggle"
         @show="getToolInfo"
+        :tools="tools"
       />
       <editor-menu
         :isActive="isActive"

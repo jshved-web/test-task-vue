@@ -10,12 +10,11 @@
 <script>
 export default {
   props: {
-    toggle: {
-    },
     tools: {
-      type: Array,
-      required: true
-    }
+      required: true,
+      type: Array
+    },
+    toggle: {}
   },
   methods: {
     clickOnTool (i) {
